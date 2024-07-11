@@ -5,7 +5,7 @@ def encrypt_image(input_path, output_path, key):
     image = Image.open(input_path)
     pixels = np.array(image)
 
-    encrypted_pixels = (pixels + key) % 256  # Simple encryption by adding the key and modulo 256
+    encrypted_pixels = (pixels + key) % 256
     encrypted_image = Image.fromarray(encrypted_pixels.astype(np.uint8))
 
     encrypted_image.save(output_path)
@@ -15,7 +15,7 @@ def decrypt_image(input_path, output_path, key):
     image = Image.open(input_path)
     pixels = np.array(image)
 
-    decrypted_pixels = (pixels - key) % 256  # Simple decryption by subtracting the key and modulo 256
+    decrypted_pixels = (pixels - key) % 256 
     decrypted_image = Image.fromarray(decrypted_pixels.astype(np.uint8))
 
     decrypted_image.save(output_path)
